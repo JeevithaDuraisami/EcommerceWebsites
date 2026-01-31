@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">ShopEasy</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero text-center d-flex align-items-center justify-content-center">
+  <div>
+    <h1 class="fw-bold">Big Sale 🎉</h1>
+    <p class="lead">Premium products at affordable prices</p>
+    <button id="offerBtn" class="btn btn-warning">Show Offer</button>
+    <p id="offerText" class="mt-3 fw-semibold"></p>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section id="products" class="container my-5 pt-5">
+  <h2 class="text-center fw-bold mb-4">Our Products</h2>
+
+  <div class="row g-4">
+
+    <!-- Product 1 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="data:image/jpeg;base64,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"
+             class="card-img-top product-img"
+             onclick="showProduct(
+               'ProSound Wireless Headphones',
+               'High-quality sound with noise isolation and deep bass.',
+               '₹1,199'
+             )">
+        <div class="card-body text-center">
+          <h5>ProSound Wireless Headphones</h5>
+          <p class="fw-bold">₹1,199</p>
+          <button class="btn btn-primary w-100"
+                  onclick="addToCart(this, 'ProSound Wireless Headphones')">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSt_fGZQsHPJbJdJfOcF2EqyZc7ZX9hBQeJfYOU_G1M0FvuPu4wz8vdhjOApi2F_icf5OiKkUGxGiRozY8msI4kZvKcwkFbZ3NRZA5OcUFKeZjuZKj3EzUM9qA"
+             class="card-img-top product-img"
+             onclick="showProduct(
+               'NeoTrack Smart Fitness Watch',
+               'Track steps, calories, heart rate and daily activities.',
+               '₹1,999'
+             )">
+        <div class="card-body text-center">
+          <h5>NeoTrack Smart Fitness Watch</h5>
+          <p class="fw-bold">₹1,999</p>
+          <button class="btn btn-primary w-100"
+                  onclick="addToCart(this, 'NeoTrack Smart Fitness Watch')">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBIefcdHgUiuqCktfXe4enLLDi6guWpwSUzlcNdJQfaiwiMyCMcMfroo0&s"
+               class="card-img-top product-img"
+     onclick="showProduct(
+       'UrbanCarry Laptop Backpack',
+       'Durable backpack suitable for office and travel.',
+       '₹1,499'
+     )">
+        <div class="card-body text-center">
+          <h5>UrbanCarry Laptop Backpack</h5>
+          <p class="fw-bold">₹1,499</p>
+          <button class="btn btn-primary w-100"
+                  onclick="addToCart(this, 'UrbanCarry Laptop Backpack')">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form onsubmit="return validateForm()">
+          <input type="text" id="name" class="form-control mb-3" placeholder="Your Name">
+          <input type="email" id="email" class="form-control mb-3" placeholder="Your Email">
+          <button class="btn btn-success w-100">Submit</button>
+          <p id="msg" class="text-danger mt-2 text-center"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT MODAL ================= -->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle"></h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p id="modalDesc"></p>
+        <h6 id="modalPrice"></h6>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-success">Buy Now</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
